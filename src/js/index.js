@@ -19,7 +19,19 @@ let msecond = 0;
 let mdsecond = 0;
 let mcsecond = 0;
 setInterval(() => {
-	console.log(second);
+	console.log(
+		mcsecond +
+			"" +
+			mdsecond +
+			"" +
+			msecond +
+			"" +
+			csecond +
+			"" +
+			dsecond +
+			"" +
+			second
+	);
 	ReactDOM.render(
 		<Home
 			second={second}
