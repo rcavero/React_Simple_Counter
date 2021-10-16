@@ -1,26 +1,30 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import Card from "./card.jsx";
+import ClockSymbol from "./clockSymbol.jsx";
+import PropTypes from "prop-types";
 
 //create your first component
-const Home = () => {
+const Home = props => {
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container mt-2">
+			<div className="row bg-dark justify-content-center p-0">
+				<ClockSymbol />
+				<Card counter={props.mcsecond} />
+				<Card counter={props.mdsecond} />
+				<Card counter={props.msecond} />
+				<Card counter={props.csecond} />
+				<Card counter={props.dsecond} />
+				<Card counter={props.second} />
+			</div>
 		</div>
 	);
 };
-
+Home.propTypes = {
+	second: PropTypes.number,
+	dsecond: PropTypes.number,
+	csecond: PropTypes.number,
+	msecond: PropTypes.number,
+	mdsecond: PropTypes.number,
+	mcsecond: PropTypes.number
+};
 export default Home;
